@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+  <p>
+    {{user.username}}
+  </p>
+  <a href="{{url_for('users.edit', id=user.id)}}">Edit account</a>
+  <a href="{{url_for('users.show', id=user.id)}}?_method=DELETE" method="POST">Delete account</a>
+{% endblock %}

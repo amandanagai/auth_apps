@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Welcome back!</h1>
+  <form action="{{url_for('users.login')}}" method="POST">
+    {{form.csrf_token}}
+    <p>
+      {{form.username.label}}
+      {{form.username}}
+      <br>
+      <br>
+      {{form.password.label}}
+      {{form.password}}
+    </p>
+    <input type="submit" value="Login">
+  </form>
+{% endblock %}

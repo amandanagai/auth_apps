@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form action="{{url_for('users.show', id=id)}}?_method=PATCH" method="POST">
+    {{form.csrf_token}}
+    <p>
+      {{form.username.label}}
+      {{form.username}}
+      <br>
+      {{form.current_password.label}}
+      {{form.current_password}}
+      <br>
+      {{form.new_password.label}}
+      {{form.new_password}}
+      <br>
+      {{form.confirm_password.label}}
+      {{form.confirm_password}}
+      <br>
+    </p>
+    <input type="submit" value="Update">
+  </form>
+{% endblock %}

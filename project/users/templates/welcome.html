@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Welcome, {{current_user.username}}!</h1>
+  <a href="{{url_for('users.show', id=current_user.id)}}">See your account</a>
+  |
+  <a href="{{url_for('users.logout')}}">Logout</a>
+{% endblock %}
